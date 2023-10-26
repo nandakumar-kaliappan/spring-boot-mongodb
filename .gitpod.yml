@@ -6,7 +6,8 @@
 
 tasks:
   - init: ./mvnw install -DskipTests=false
-    command: docker pull mongo
+    command: |
+            docker pull mongo
             docker run -p 27017:27017 -d mongo
 
 
