@@ -5,9 +5,16 @@
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
 tasks:
-  - init: ./mvnw install -DskipTests=false
+  - name: Terminal A
+    init: ./mvnw install -DskipTests=false
     
 
-  - init: docker pull mongo
-    command: docker run -p 27017:27017 -v /workspace/datadir:/data/db -d 
+  - name: Terminal B
+    before: echo "hi all"
+    init: docker pull mongo
+    command: docker run -p 27017:27017 -v /workspace/datadir:/data/db -d
+  - name: Terminal Test
+    before: echo "running -before"
+    init: echo "running -init"
+    command: echo "running -command"
 
