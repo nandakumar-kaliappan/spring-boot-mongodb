@@ -1,0 +1,10 @@
+{
+	"folders": [
+		{
+			"path": cd "."
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic"
+	}
+}
