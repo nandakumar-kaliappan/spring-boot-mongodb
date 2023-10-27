@@ -17,6 +17,8 @@ tasks:
   - name: Terminal B
     init: docker pull mongo
     command: docker run -p 27017:27017 -v /workspace/datadir:/data/db -d mongo
+  
+  
 
   - name: Terminal D
     init: docker run --name nsome-mysql -v /workspace/datadirmysql1:/var/lib/mysql -e MYSQL_ALLOW_EMPTY_PASSWORD=yes -d mysql
@@ -29,5 +31,7 @@ tasks:
    
   
 
+  - name: Terminal D
+    init: docker run --name cos -d centos tail -f /dev/null
+    command: docker start cos
   
-
