@@ -5,17 +5,22 @@
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
 tasks:
+  - name: Terminal Test
+    before: echo "running -before"
+    init: echo "running -init"
+    command: echo "running -command"
+
   - name: Terminal A
     init: ./mvnw install -DskipTests=false
     
 
   - name: Terminal B
-    before: echo "hi all"
     init: docker pull mongo
     command: docker run -p 27017:27017 -v /workspace/datadir:/data/db -d mongo
 
-  - name: Terminal Test
-    before: echo "running -before"
-    init: echo "running -init"
-    command: echo "running -command"
+  - name: Terminal C 
+    # init: docker run -d --hostname knk-rabbit --name my-rabbit -p 8080:15672 -p 5671:5671 -p 5672:5672 rabbitmq:3-management
+  
+
+  
 
