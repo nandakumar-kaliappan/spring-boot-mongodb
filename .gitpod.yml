@@ -8,5 +8,6 @@ tasks:
   - init: ./mvnw install -DskipTests=false
     
 
-  - init: docker run -p 27017:27017 -v /workspace/datadir:/data/db -d mongo
+  - init: docker pull mongo
+    command: docker run -p 27017:27017 -v /workspace/datadir:/data/db -d 
 
