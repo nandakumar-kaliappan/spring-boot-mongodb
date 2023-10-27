@@ -12,7 +12,8 @@ tasks:
   - name: Terminal B
     before: echo "hi all"
     init: docker pull mongo
-    command: docker run -p 27017:27017 -v /workspace/datadir:/data/db -d
+    command: docker run -p 27017:27017 -v /workspace/datadir:/data/db -d mongo
+
   - name: Terminal Test
     before: echo "running -before"
     init: echo "running -init"
