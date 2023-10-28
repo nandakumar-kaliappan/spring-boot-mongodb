@@ -32,7 +32,7 @@ tasks:
   - name: Terminal E 
     init: |
           docker build -t myjavaubuntuimg .
-          java run  --name javaubuntu -d myjavaubuntuimg tail -f /dev/null
+          docker run  --name javaubuntu -d myjavaubuntuimg tail -f /dev/null
     command: docker start javaubuntu
    
   
