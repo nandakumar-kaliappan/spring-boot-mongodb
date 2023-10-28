@@ -36,8 +36,4 @@ tasks:
     command: docker start javaubuntu
    
   
-
-  - name: Terminal D
-    init: docker run --name cos -d centos tail -f /dev/null
-    command: docker start cos
   
